@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbarTitleTextSize">20sp</dimen>
+    <dimen name="toolbarTitleMarginRight">20dp</dimen>
+    <dimen name="listImageWidth">76dp</dimen>
+    <dimen name="listTextWidth">244dp</dimen>
+    <dimen name="listTextHeight">40dp</dimen>
+    <dimen name="listTextSize">16sp</dimen>
+    <dimen name="listTextFadeLength">20dp</dimen>
+    <dimen name="cardHeight">76dp</dimen>
+    <dimen name="toolbarTitleMarginLeft">30dp</dimen>
+    <dimen name="detailsImageHeight">200dp</dimen>
+    <dimen name="articleTextWidth">316dp</dimen>
+    <dimen name="articleTextMarginTop">20dp</dimen>
+    <dimen name="articleTextMarginLeft">20dp</dimen>
+    <dimen name="articleTextMarginRight">20dp</dimen>
+    <dimen name="articleTitleTextSize">20sp</dimen>
+</resources>
