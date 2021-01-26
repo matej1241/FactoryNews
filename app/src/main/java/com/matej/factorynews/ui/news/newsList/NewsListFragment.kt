@@ -60,9 +60,6 @@ class NewsListFragment : BaseFragment(), NewsListContract.View {
 
     override fun onGetNewsSuccessful(news: List<NewsDb>) {
         adapter.setData(news)
-        presenter.removeCurrentNews()
-        presenter.saveNews(news)
-        presenter.saveNewsToRepository(news)
         progressBar.visibility = View.GONE
     }
 
