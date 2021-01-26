@@ -4,10 +4,13 @@ import com.matej.factorynews.model.NewsDb
 
 interface NewsDetailsContract {
 
-    interface View{}
+    interface View{
+        fun onDataRetrieved(news: List<NewsDb>, selectedIndex: Int)
+    }
 
     interface Presenter{
         fun setView(view: View)
+        fun getData()
         fun getNewsList() : List<NewsDb>
         fun getSelectedIndex() : Int
     }

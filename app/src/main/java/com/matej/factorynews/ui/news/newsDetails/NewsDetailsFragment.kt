@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import com.matej.factorynews.FactoryNews
 import com.matej.factorynews.R
 import com.matej.factorynews.db.NewsDatabase
+import com.matej.factorynews.model.NewsDb
 import com.matej.factorynews.networking.BackendFactory
 import com.matej.factorynews.persistance.FragmentDataRepositoryImpl
 import com.matej.factorynews.presentation.NewsDetailsPresenter
@@ -23,17 +24,21 @@ class NewsDetailsFragment : BaseFragment(), NewsDetailsContract.View {
 
     override fun setupUi() {
         presenter.setView(this)
-        setViewPager()
+        presenter.getData()
     }
 
-    private fun setViewPager() {
+    private fun setViewPager(news: List<NewsDb>, selectedIndex: Int) {
         newsViewPager.adapter = adapter
-        adapter.setData(presenter.getNewsList())
-        newsViewPager.post{ newsViewPager.setCurrentItem(presenter.getSelectedIndex(), false) }
+        adapter.setData(news)
+        newsViewPager.post{ newsViewPager.setCurrentItem(selectedIndex, false) }
     }
 
     private fun onBackButtonClicked() {
         fragmentManager?.popBackStack()
+    }
+
+    override fun onDataRetrieved(news: List<NewsDb>, selectedIndex: Int) {
+        setViewPager(news, selectedIndex)
     }
 
     companion object {

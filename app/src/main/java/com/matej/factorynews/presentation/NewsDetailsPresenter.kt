@@ -14,7 +14,11 @@ class NewsDetailsPresenter(
         this.view = view
     }
 
+    override fun getData() = onDataRetrieved(getNewsList(), getSelectedIndex())
+
     override fun getNewsList(): List<NewsDb> = fragmentDataRepository.getNewsList()
 
     override fun getSelectedIndex(): Int = fragmentDataRepository.getSelectedIndex()
+
+    private fun onDataRetrieved(news: List<NewsDb>, selectedIndex: Int) = view.onDataRetrieved(news, selectedIndex)
 }
